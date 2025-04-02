@@ -54,7 +54,7 @@ Welcome to the **Anas Ibn Malik School Management System** repository! This proj
     - Update the DATABASE_URL in .env with your PostgreSQL connection string.
     - Run Prisma migrations:
   ```bash
-  npx prisma migrate dev --name init
+  bun prisma migrate dev --name init
   ```
   - Start the backend server:
   ```bash
@@ -64,7 +64,7 @@ Welcome to the **Anas Ibn Malik School Management System** repository! This proj
 ### 3️⃣ Frontend Development:
 - Navigate to the frontend directory (if applicable) and start the development server:
     ```bash
-    npm run dev
+    bun run dev
     ```
 - Open the app in your browser at [http://localhost:3000](http://localhost:3000).
 
