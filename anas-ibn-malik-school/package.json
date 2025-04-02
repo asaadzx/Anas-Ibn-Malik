@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"next dev\" \"bun run /home/asaad/Documents/GitHub/Anas-Ibn-Malik/anas-ibn-malik-school/src/app/Backend/main.ts\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"next start\" \"bun run /home/asaad/Documents/GitHub/Anas-Ibn-Malik/anas-ibn-malik-school/src/app/Backend/main.ts\"",
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/webpack": "^5.28.5",
+    "concurrently": "^9.1.2",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "webpack": "^5.98.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
