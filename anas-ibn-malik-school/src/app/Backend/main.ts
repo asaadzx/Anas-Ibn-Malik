@@ -5,6 +5,7 @@ import { classesRoutes } from './routes/classesRoutes';
 import { examsRoutes } from './routes/examsRoutes'; 
 import { studentClassesRoutes } from './routes/studentClassesRoutes'; 
 import { examResultsRoutes } from './routes/examResultsRoutes'; 
+import { teachersRoutes } from './routes/teacherRoutes'; 
 
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3000; // Use environment variable for port
@@ -24,6 +25,9 @@ const server = serve({
       } 
       else if (pathname.startsWith("/classes")) {
         return await classesRoutes(req);
+      }
+      else if (pathname.startsWith("/teachers")) {
+        return await teachersRoutes(req);
       } 
       else if (pathname.startsWith("/exams")) {
         return await examsRoutes(req);
@@ -50,7 +54,7 @@ const server = serve({
       });
     }
   },
-  error(error: Error) { // Add a dedicated error handler for server-level errors
+  error(error: Error) {
     console.error("Server error:", error);
     return new Response(JSON.stringify({ error: "Internal Server Error" }), {
       status: 500,
