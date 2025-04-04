@@ -1,26 +1,26 @@
 import { Request } from "bun";
-import { getAllStudents, getStudentById, createStudent, updateStudent, deleteStudent } from "../controllers/studentsControllers";
+import { getAllClasses, getClassById, createClass, updateClass, deleteClass } from "../controllers/studentClassesControllers";
 
-export async function studentsRoutes(req: Request): Promise<Response> {
+export async function studentClassesRoutes(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const pathname = url.pathname;
   const method = req.method;
 
   if (method === "GET" && pathname === "/students") {
-    return await getAllStudents();
+    return await getAllClasses();
   } else if (method === "GET" && pathname.startsWith("/students/")) {
     const id = pathname.split("/")[2];
-    return await getStudentById(id);
+    return await getClassById(id);
   } else if (method === "POST" && pathname === "/students") {
     const body = await req.json();
-    return await createStudent(body);
+    return await createClass(body);
   } else if (method === "PUT" && pathname.startsWith("/students/")) {
     const id = pathname.split("/")[2];
     const body = await req.json();
-    return await updateStudent(id, body);
+    return await updateClass(id, body);
   } else if (method === "DELETE" && pathname.startsWith("/students/")) {
     const id = pathname.split("/")[2];
-    return await deleteStudent(id);
+    return await deleteClass(id);
   }
 
   return new Response(JSON.stringify({ error: "Route not found" }), { status: 404 });
