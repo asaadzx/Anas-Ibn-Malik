@@ -7,7 +7,7 @@ Welcome to the **Anas Ibn Malik School Management System** repository! This proj
 ## 🚀 Technologies and Tools
 
 ### 🛠️ Backend:
-- ⚡ **Bun**: A fast JavaScript runtime
+- ⚡ **Bun**: A fast Typescript runtime
 - 📝 **TypeScript**: For type-safe programming
 - 📦 **Prisma**: ORM for database interaction
 - 🗄️ **PostgreSQL**: Relational database
