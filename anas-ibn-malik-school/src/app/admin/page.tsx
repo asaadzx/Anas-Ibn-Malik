@@ -4,18 +4,19 @@ import { useState, useEffect } from "react";
 
 export default function Admin() {
   const [students, setStudents] = useState([]);
+  const [classes, setClasses] = useState([]);
+  const [teachers, setTeachers] = useState([]);
   const [newStudent, setNewStudent] = useState({ name: "", national_id: "", password: "" });
-  const [selectedStudent, setSelectedStudent] = useState<any>(null);
+  const [newClass, setNewClass] = useState({ class_name: "",year: 0, grade: ""});
+  const [newTeacher, setNewTeacher] = useState({ name: "", subject: "" });
   const [loading, setLoading] = useState(false);
 
   // Fetch all students
   const fetchStudents = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/students");
-      console.log("Raw response:", response);
+      const response = await fetch("http://localhost:1365/students");
       const data = await response.json();
-      console.log("Parsed data:", data);
       setStudents(data);
     } catch (error) {
       console.error("Error fetching students:", error);
@@ -24,15 +25,29 @@ export default function Admin() {
     }
   };
 
-  // Fetch a specific student by ID
-  const fetchStudentById = async (id: number) => {
+  // Fetch all classes
+  const fetchClasses = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/students/${id}`);
+      const response = await fetch("http://localhost:1365/classes");
       const data = await response.json();
-      setSelectedStudent(data);
+      setClasses(data);
     } catch (error) {
-      console.error("Error fetching student:", error);
+      console.error("Error fetching classes:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fetch all teachers
+  const fetchTeachers = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch("http://localhost:1365/teachers");
+      const data = await response.json();
+      setTeachers(data);
+    } catch (error) {
+      console.error("Error fetching teachers:", error);
     } finally {
       setLoading(false);
     }
@@ -43,7 +58,7 @@ export default function Admin() {
     e.preventDefault();
     try {
       setLoading(true);
-      await fetch("http://localhost:3000/students", {
+      await fetch("http://localhost:1365/students", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newStudent),
@@ -57,33 +72,39 @@ export default function Admin() {
     }
   };
 
-  // Update a student's information
-  const updateStudent = async (e: React.FormEvent) => {
+  // Add a new class
+  const addClass = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       setLoading(true);
-      await fetch(`http://localhost:3000/students/${selectedStudent.student_id}`, {
-        method: "PUT",
+      await fetch("http://localhost:1365/classes", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(selectedStudent),
+        body: JSON.stringify(newClass),
       });
-      setSelectedStudent(null); // Clear the selected student after update
-      fetchStudents(); // Refresh the student list
+      setNewClass({ class_name: "", year: 0 ,grade: ""});
+      fetchClasses();
     } catch (error) {
-      console.error("Error updating student:", error);
+      console.error("Error adding class:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  // Delete a student
-  const deleteStudent = async (id: number) => {
+  // Add a new teacher
+  const addTeacher = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
       setLoading(true);
-      await fetch(`http://localhost:3000/students/${id}`, { method: "DELETE" });
-      fetchStudents();
+      await fetch("http://localhost:1365/teachers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newTeacher),
+      });
+      setNewTeacher({ name: "", subject: "" });
+      fetchTeachers();
     } catch (error) {
-      console.error("Error deleting student:", error);
+      console.error("Error adding teacher:", error);
     } finally {
       setLoading(false);
     }
@@ -91,6 +112,8 @@ export default function Admin() {
 
   useEffect(() => {
     fetchStudents();
+    fetchClasses();
+    fetchTeachers();
   }, []);
 
   return (
@@ -99,6 +122,7 @@ export default function Admin() {
         <h1 className="text-3xl font-bold">Admin Panel</h1>
       </header>
       <main className="max-w-4xl mx-auto">
+        {/* Add New Student */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Add New Student</h2>
           <form onSubmit={addStudent} className="flex flex-col gap-4">
@@ -134,6 +158,74 @@ export default function Admin() {
             </button>
           </form>
         </section>
+
+        {/* Add New Class */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Add New Class</h2>
+          <form onSubmit={addClass} className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Class Name"
+              value={newClass.class_name}
+              onChange={(e) => setNewClass({ ...newClass, class_name: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Year"
+              value={newClass.year}
+              onChange={(e) => setNewClass({ ...newClass, year: parseInt(e.target.value, 10) || 0 })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Grade"
+              value={newClass.grade}
+              onChange={(e) => setNewClass({ ...newClass, grade: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Add Class
+            </button>
+          </form>
+        </section>
+
+        {/* Add New Teacher */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Add New Teacher</h2>
+          <form onSubmit={addTeacher} className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Teacher Name"
+              value={newTeacher.name}
+              onChange={(e) => setNewTeacher({ ...newTeacher, name: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              value={newTeacher.subject}
+              onChange={(e) => setNewTeacher({ ...newTeacher, subject: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Add Teacher
+            </button>
+          </form>
+        </section>
+
+        {/* Display Students */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Student List</h2>
           {loading ? (
@@ -149,19 +241,27 @@ export default function Admin() {
                     <p className="font-bold">{student.name}</p>
                     <p>National ID: {student.national_id}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => fetchStudentById(student.student_id)}
-                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                    >
-                      View
-                    </button>
-                    <button
-                      onClick={() => deleteStudent(student.student_id)}
-                      className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                    >
-                      Delete
-                    </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        {/* Display Classes */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Class List</h2>
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <ul className="space-y-4">
+              {classes.map((classItem: any, index: number) => (
+                <li
+                  key={classItem.class_id || index}
+                  className="flex justify-between items-center border p-4 rounded"
+                >
+                  <div>
+                    <p className="font-bold">{classItem.name}</p>
+                    <p>Class Name: {classItem.class_name}</p>
                   </div>
                 </li>
               ))}
@@ -169,57 +269,27 @@ export default function Admin() {
           )}
         </section>
 
-        {selectedStudent && (
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Update Student</h2>
-            <form onSubmit={updateStudent} className="flex flex-col gap-4">
-              <input
-                type="text"
-                placeholder="Name"
-                value={selectedStudent.name}
-                onChange={(e) =>
-                  setSelectedStudent({ ...selectedStudent, name: e.target.value })
-                }
-                className="border p-2 rounded"
-                required
-              />
-              <input
-                type="text"
-                placeholder="National ID"
-                value={selectedStudent.national_id}
-                onChange={(e) =>
-                  setSelectedStudent({ ...selectedStudent, national_id: e.target.value })
-                }
-                className="border p-2 rounded"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Phone"
-                value={selectedStudent.phone || ""}
-                onChange={(e) =>
-                  setSelectedStudent({ ...selectedStudent, phone: e.target.value })
-                }
-                className="border p-2 rounded"
-              />
-              <input
-                type="email"
-                placeholder="Gmail"
-                value={selectedStudent.gmail || ""}
-                onChange={(e) =>
-                  setSelectedStudent({ ...selectedStudent, gmail: e.target.value })
-                }
-                className="border p-2 rounded"
-              />
-              <button
-                type="submit"
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-              >
-                Update Student
-              </button>
-            </form>
-          </section>
-        )}
+        {/* Display Teachers */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Teacher List</h2>
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <ul className="space-y-4">
+              {teachers.map((teacher: any, index: number) => (
+                <li
+                  key={teacher.teacher_id || index}
+                  className="flex justify-between items-center border p-4 rounded"
+                >
+                  <div>
+                    <p className="font-bold">{teacher.name}</p>
+                    <p>Subject: {teacher.subject}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
       </main>
     </div>
   );

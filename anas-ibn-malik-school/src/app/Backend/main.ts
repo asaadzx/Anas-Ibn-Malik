@@ -1,5 +1,6 @@
 import { serve } from "bun";
 import { PrismaClient } from "@prisma/client";
+import { exec } from 'child_process'; 
 import { studentsRoutes } from './routes/studentsRoutes';
 import { classesRoutes } from './routes/classesRoutes'; 
 import { examsRoutes } from './routes/examsRoutes'; 
@@ -8,7 +9,8 @@ import { examResultsRoutes } from './routes/examResultsRoutes';
 import { teachersRoutes } from './routes/teacherRoutes'; 
 
 const prisma = new PrismaClient();
-const PORT = process.env.PORT || 3000; // Use environment variable for port
+const PORT = 1365; // Use environment variable for port
+
 
 const server = serve({
   port: PORT,
@@ -18,7 +20,6 @@ const server = serve({
 
     try {
       console.log(`Incoming request: ${req.method} ${req.url}`); // Basic logging
-
       // Delegate to specific routers based on path prefix
       if (pathname.startsWith("/students")) {
         return await studentsRoutes(req);
@@ -38,13 +39,13 @@ const server = serve({
       else if (pathname.startsWith("/exam-results")) {
         return await examResultsRoutes(req);
       }
-
+      
       // If no route matches
       return new Response(JSON.stringify({ error: "Not Found" }), {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
-
+      
     } catch (error) {
       console.error("Error processing request:", error);
       // Provide a generic error response
@@ -62,5 +63,23 @@ const server = serve({
     });
   },
 });
+
+function testAPI(apiUrl: string) {
+  exec(`curl ${apiUrl}`, (error, stdout) => {
+    if (error) {
+      console.error(`Error executing curl: ${error.message}`);
+      return ;
+    }
+    console.log(`\x1b[32m✔️ Succeeded:\x1b[0m ${stdout.trim()}`);
+  }
+  );
+}
+
+testAPI(`http://localhost:${PORT}/students`); 
+testAPI(`http://localhost:${PORT}/classes`); 
+testAPI(`http://localhost:${PORT}/teachers`);
+testAPI(`http://localhost:${PORT}/exams`); 
+testAPI(`http://localhost:${PORT}/student-classes`); 
+testAPI(`http://localhost:${PORT}/exam-results`); 
 
 console.log(`Server running on http://localhost:${PORT}`);

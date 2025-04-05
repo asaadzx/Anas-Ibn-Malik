@@ -6,19 +6,19 @@ export async function examsRoutes(req: Request): Promise<Response> {
   const pathname = url.pathname;
   const method = req.method;
 
-  if (method === "GET" && pathname === "/students") {
+  if (method === "GET" && pathname === "/exams") {
     return await getAllClasses();
-  } else if (method === "GET" && pathname.startsWith("/students/")) {
+  } else if (method === "GET" && pathname.startsWith("/exams/")) {
     const id = pathname.split("/")[2];
     return await getClassById(id);
-  } else if (method === "POST" && pathname === "/students") {
+  } else if (method === "POST" && pathname === "/exams") {
     const body = await req.json();
     return await createClass(body);
-  } else if (method === "PUT" && pathname.startsWith("/students/")) {
+  } else if (method === "PUT" && pathname.startsWith("/exams/")) {
     const id = pathname.split("/")[2];
     const body = await req.json();
     return await updateClass(id, body);
-  } else if (method === "DELETE" && pathname.startsWith("/students/")) {
+  } else if (method === "DELETE" && pathname.startsWith("/exams/")) {
     const id = pathname.split("/")[2];
     return await deleteClass(id);
   }
