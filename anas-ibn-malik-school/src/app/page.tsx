@@ -711,7 +711,7 @@ const AnasBnMalekSchool: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-xl shadow-md p-8">
               <div className="md:w-1/3 flex justify-center">
                 <img 
-                  src="/images/developer.jpg" 
+                  src="https://avatars.githubusercontent.com/u/160162342?v=4" 
                   alt="Developer" 
                   className="h-48 w-48 rounded-full object-cover border-4 border-amber-300 shadow-md"
                 />
