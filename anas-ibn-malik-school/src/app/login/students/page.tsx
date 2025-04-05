@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client"
+
+import React, { use, useState } from "react";
 
 const LoginPage = () => {
   const [role, setRole] = useState<"admin" | "student" | "teacher" | null>(null);
