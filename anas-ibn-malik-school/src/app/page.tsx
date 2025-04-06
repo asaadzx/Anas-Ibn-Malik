@@ -285,6 +285,7 @@ const AnasIbnMalikSchool: React.FC = () => {
     <div className="min-h-screen bg-amber-50">
       <Head>
         <title>Anas Ibn Malik School</title>
+        <meta name="google-site-verification" content="CoAMk0WQzTvNKdxbXJYakiYUtXOAiJBuZQhOXtqXtB8" />
         <meta name="description" content="Anas Ibn Malik School - Quality Education in Egypt" />
         <link rel="icon" href="/school-logo.png" />
         
