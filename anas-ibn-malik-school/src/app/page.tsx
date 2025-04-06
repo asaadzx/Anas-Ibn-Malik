@@ -39,7 +39,7 @@ interface DownloadOptions {
   };
 }
 
-const AnasBnMalekSchool: React.FC = () => {
+const AnasIbnMalikSchool: React.FC = () => {
   const [isNavActive, setIsNavActive] = useState(false);
   const [currentYear, setCurrentYear] = useState<number | null>(null);
   useEffect(() => {
@@ -284,8 +284,8 @@ const AnasBnMalekSchool: React.FC = () => {
   return (
     <div className="min-h-screen bg-amber-50">
       <Head>
-        <title>Anas bn Malek School</title>
-        <meta name="description" content="Anas bn Malek School - Quality Education in Egypt" />
+        <title>Anas Ibn Malik School</title>
+        <meta name="description" content="Anas Ibn Malik School - Quality Education in Egypt" />
         <link rel="icon" href="/school-logo.png" />
         
         {/* Analytics */}
@@ -337,7 +337,7 @@ const AnasBnMalekSchool: React.FC = () => {
                 height={48}
                 className="h-12 w-12"
               />
-              <span className="text-white font-bold text-xl">Anas bn Malek</span>
+              <span className="text-white font-bold text-xl">Anas Ibn Malik</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -391,7 +391,7 @@ const AnasBnMalekSchool: React.FC = () => {
         <section id="home" className="py-16 mb-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl shadow-md">
           <div className="max-w-4xl mx-auto text-center px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-orange-800 mb-6">
-              Welcome to <span className="text-amber-600">Anas bn Malek School</span>
+              Welcome to <span className="text-amber-600">Anas Ibn Malik School</span>
             </h1>
             <div className="flex justify-center mb-8">
             <Image 
@@ -433,7 +433,7 @@ const AnasBnMalekSchool: React.FC = () => {
               </div>
               <div className="md:w-1/2">
                 <p className="text-lg text-gray-700 mb-4">
-                  Located in the heart of Egypt, Anas bn Malek School is known for its commitment to excellence in education.
+                  Located in the heart of Egypt, Anas Ibn Malik School is known for its commitment to excellence in education.
                 </p>
                 <p className="text-lg text-gray-700">
                   Our experienced teachers and supportive staff create a positive learning atmosphere for all students.
@@ -585,7 +585,7 @@ const AnasBnMalekSchool: React.FC = () => {
               School News
             </h2>
             <p className="text-lg text-gray-700 mb-8 text-center">
-              Stay updated with the latest news and events happening at Anas bn Malek School.
+              Stay updated with the latest news and events happening at Anas Ibn Malik School.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -724,7 +724,7 @@ const AnasBnMalekSchool: React.FC = () => {
               </div>
               <div className="md:w-2/3">
                 <p className="text-lg text-gray-700 mb-4">
-                  Hi, I'm Asaad, a student at Anas bn Malek School and the developer of this website. I love coding and
+                  Hi, I'm Asaad, a student at Anas Ibn Malik School and the developer of this website. I love coding and
                   creating interactive web pages. My sister Asma helped me a lot.
                 </p>
                 
@@ -792,7 +792,7 @@ const AnasBnMalekSchool: React.FC = () => {
                 height={48}
                 className="h-12 w-12"
               />
-                <span className="text-xl font-bold">Anas bn Malek School</span>
+                <span className="text-xl font-bold">Anas Ibn Malik School</span>
               </div>
               <p className="mt-2 text-amber-100">Quality Education in Egypt</p>
             </div>
@@ -822,7 +822,7 @@ const AnasBnMalekSchool: React.FC = () => {
           </div>
           
           <div className="mt-8 pt-8 border-t border-amber-500 text-center text-amber-100">
-            <p>&copy; {currentYear || "Loading..."} Anas bn Malek School. All rights reserved.</p>
+            <p>&copy; {currentYear || "Loading..."} Anas Ibn Malik School. All rights reserved.</p>
             <p className="mt-2">Developed by Asaad with ❤️</p>
           </div>
         </div>
@@ -831,4 +831,4 @@ const AnasBnMalekSchool: React.FC = () => {
   );
 };
 
-export default AnasBnMalekSchool;
+export default AnasIbnMalikSchool;

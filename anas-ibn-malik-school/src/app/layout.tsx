@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anas bn Malek School",
+  title: "Anas Ibn Malik School",
   description: "Anas Ibn Malik School - Quality Education in Egypt",
   icons: {
     icon: "images/school-logo.png",
