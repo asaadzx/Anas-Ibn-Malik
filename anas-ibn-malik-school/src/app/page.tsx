@@ -736,7 +736,7 @@ const AnasBnMalekSchool: React.FC = () => {
                   </a>
                   
                   <a
-                    href="https://github.com/asaadzx/Anas-bn-malek-School"
+                    href="https://github.com/asaadzx/Anas-Ibn-Malik"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors duration-200"
@@ -750,15 +750,15 @@ const AnasBnMalekSchool: React.FC = () => {
                 
                 <div className="bg-amber-100 rounded-lg p-4 border-l-4 border-amber-500">
                   <p className="text-gray-700 mb-2">
-                    Check out the new website for the school built with Next.js and Tailwind:
+                    Check out the old website for the school built with HTML and CSS:
                   </p>
                   <a
-                    href="https://anas-ibn-malik.vercel.app/"
+                    href="https://anas-bn-malek.netlify.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-amber-600 hover:text-amber-700 font-medium"
                   >
-                    https://anas-ibn-malik.vercel.app/
+                    https://anas-bn-malek.netlify.app/
                   </a>
                 </div>
                 
