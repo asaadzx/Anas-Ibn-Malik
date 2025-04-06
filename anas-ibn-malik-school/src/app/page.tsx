@@ -289,40 +289,39 @@ const AnasIbnMalikSchool: React.FC = () => {
         <link rel="icon" href="/school-logo.png" />
         
         {/* Analytics */}
-        {/* Google Analytics */}
         <Script
-        defer
-        src="https://plausible.io/js/script.file-downloads.hash.outbound-links.revenue.js"
-        data-domain="anas-bn-malek.netlify.app"
-      />
-      <Script
-        id="plausible-init"
-        dangerouslySetInnerHTML={{
-          __html: `
+          defer
+          src="https://plausible.io/js/script.file-downloads.hash.outbound-links.revenue.js"
+          data-domain="anas-bn-malek.netlify.app"
+          />
+        <Script
+          id="plausible-init"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.plausible = window.plausible || function() {
               (window.plausible.q = window.plausible.q || []).push(arguments);
-            };
-          `,
-        }}
-      />
-      <Script 
-        src="https://www.googletagmanager.com/gtag/js?id=G-EBZFEL7R7V" 
-        strategy="afterInteractive"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'G-EBZFEL7R7V');
-          `,
-        }}
-      />
+              };
+              `,
+            }}
+            />
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EBZFEL7R7V"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BFYFTL1VT8');
+            `,
+          }}
+        />
+
       </Head>
 
       {/* Header */}
