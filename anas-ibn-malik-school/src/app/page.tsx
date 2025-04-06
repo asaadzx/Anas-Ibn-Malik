@@ -9,6 +9,7 @@ interface Teacher {
   name: string;
   subject: string;
   description: string;
+  page:string;
 }
 
 interface NewsItem {
@@ -60,30 +61,35 @@ const AnasBnMalekSchool: React.FC = () => {
       name: 'Ms. Sara',
       subject: 'English Teacher',
       description: 'Ms. Sara is passionate about helping students improve their English skills.',
+      page: '/teachers/sara',
     },
     {
       id: 'hend',
       name: 'Ms. Hend',
       subject: 'Computer Teacher',
       description: 'Ms. Hend makes computer lessons very easy to learn with fun.',
+      page: '/teachers/hend',
     },
     {
       id: 'ahmed',
       name: 'Mr. Ahmed S3eed',
       subject: 'Mathematics Teacher',
       description: 'With over 10 years of experience, Mr. Ahmed inspires students to love math.',
+      page: '/teachers/ahmed',
     },
     {
       id: 'yasmen',
       name: 'Ms. Yasmen',
       subject: 'Science Teacher',
       description: 'Ms. Yasmen brings science to life with amazing experiments.',
+      page: '/teachers/yasmen',
     },
     {
-      id: 'mohamed',
-      name: 'Mr. Mohamed',
+      id: 'ranya',
+      name: 'Ms. Ranya',
       subject: 'Arabic Teacher',
-      description: 'Mr. Mohamed is known for his creative teaching methods.',
+      description: 'Ms. Ranya is known for her creative teaching methods.',
+      page: '/teachers/ranya'
     },
   ];
 
@@ -458,7 +464,7 @@ const AnasBnMalekSchool: React.FC = () => {
                 <div 
                   key={teacher.id}
                   className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                  onClick={() => window.location.href = `/teachers/${teacher.id}`}
+                  onClick={() => window.location.href = `${teacher.page}`}
                 >
                   <div className="h-48 bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center">
                     <span className="text-6xl text-white font-bold">{teacher.name.charAt(0)}</span>
