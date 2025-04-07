@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Anas Ibn Malik School",
   description: "Anas Ibn Malik School - Quality Education in Egypt",
+  verification: {
+    google: "CoAMk0WQzTvNKdxbXJYakiYUtXOAiJBuZQhOXtqXtB8",
+  },
   icons: {
     icon: "images/school-logo.png",
     shortcut: "/favicon.ico",
@@ -30,12 +33,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <Analytics />
-      </body>
+<head>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-BFYFTL1VT8"
+  ></script>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BFYFTL1VT8');
+      `,
+    }}
+  ></script>
+</head>
+<body
+  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+>
+  {children}
+  <Analytics />
+</body>
     </html>
   );
 }

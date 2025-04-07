@@ -31,6 +31,8 @@ interface DownloadLinks {
   Math: string;
   Social: string;
   ICT: string;
+  German: string;
+  French: string;
 }
 
 interface DownloadOptions {
@@ -53,6 +55,8 @@ const AnasIbnMalikSchool: React.FC = () => {
     Math: '#',
     Social: '#',
     ICT: '#',
+    German: '#',
+    French: '#',
   });
 
   const teachers: Teacher[] = [
@@ -146,6 +150,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade1/math',
         Social: 'https://example.com/grade1/social',
         ICT: 'https://example.com/grade1/ict',
+        German: '#',
+        French: '#',
       },
       Grade2: {
         English: 'https://example.com/grade2/english',
@@ -154,6 +160,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade2/math',
         Social: 'https://example.com/grade2/social',
         ICT: 'https://example.com/grade2/ict',
+        German: '#',
+        French: '#',
       },
       Grade3: {
         English: 'https://example.com/grade2/english',
@@ -162,6 +170,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade2/math',
         Social: 'https://example.com/grade2/social',
         ICT: 'https://example.com/grade2/ict',
+        German: '#',
+        French: '#',
       },
       Grade4: {
         English: 'https://example.com/grade2/english',
@@ -170,6 +180,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade2/math',
         Social: 'https://example.com/grade2/social',
         ICT: 'https://example.com/grade2/ict',
+        German: '#',
+        French: '#',
       },
       Grade5: {
         English: 'https://example.com/grade2/english',
@@ -178,6 +190,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade2/math',
         Social: 'https://example.com/grade2/social',
         ICT: 'https://example.com/grade2/ict',
+        German: '#',
+        French: '#',
       },
       Grade6: {
         English: 'https://example.com/grade2/english',
@@ -186,6 +200,8 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/grade2/math',
         Social: 'https://example.com/grade2/social',
         ICT: 'https://example.com/grade2/ict',
+        German: '#',
+        French: '#',
       },
     },
     Prep: {
@@ -202,6 +218,10 @@ const AnasIbnMalikSchool: React.FC = () => {
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory1/Term2/Streem/Social%20Studies_1_Preparatory/Social_Studies_1_Preparatory.html',
         ICT:
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory1/Term2/Streem/ICT_ENGLISH_1_Preparatory/ICT_ENGLISH_1_Preparatory.html',
+        German: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory1/Term2/Streem/Deutschlanguages_1_Preparatory/Deutschlanguages_1_Preparatory.html',
+        French: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory1/Term2/Streem/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_1_Preparatory/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_1_Preparatory.html',
       },
       Prep2: {
         English:
@@ -216,6 +236,10 @@ const AnasIbnMalikSchool: React.FC = () => {
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory2/Term2/Streem/Social%20Studies_2_Preparatory/Social%20Studies_2_Preparatory.html',
         ICT:
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory2/Term2/Streem/ICT_ENGLISH_2_Preparatory/ICT_ENGLISH_2_Preparatory.html',
+        German: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory2/Term2/Streem/Deutschlanguages_2_Preparatory/Deutschlanguages_2_Preparatory.html',
+        French: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory2/Term2/Streem/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_2_Preparatory/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_2_Preparatory.html',
       },
       Prep3: {
         English:
@@ -230,7 +254,12 @@ const AnasIbnMalikSchool: React.FC = () => {
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory3/Term2/Streem/Social%20Studies_3_Preparatory/Social_Studies_3_Preparatory.html',
         ICT:
           'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory3/Term2/Streem/ICT_ENGLISH_3_Preparatory/ICT_ENGLISH_3_Preparatory.html',
-      },
+        German: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory3/Term2/Streem/Deutschlanguages_3_Preparatory/Deutschlanguages_3_Preparatory.html',
+        French: 
+          'https://elearnningcontent.blob.core.windows.net/elearnningcontent/content/2025/Prepratory/Prepratory3/Term2/Streem/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_3_Preparatory/Une%20deuxi%C3%A8me%20langue%20fran%C3%A7aises_3_Preparatory.html',
+
+       },
     },
     Sec: {
       Sec1: {
@@ -240,6 +269,11 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/sec2/math',
         Social: 'https://example.com/sec2/social',
         ICT: 'https://example.com/sec2/ICT',
+        German: 
+        '#',
+        French: 
+        '#',
+
       },
       Sec2: {
         English: 'https://example.com/sec2/english',
@@ -248,6 +282,11 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/sec2/math',
         Social: 'https://example.com/sec2/social',
         ICT: 'https://example.com/sec2/ICT',
+        German: 
+        '#',
+        French: 
+        '#',
+
       },
       Sec3: {
         English: 'https://example.com/sec2/english',
@@ -256,6 +295,11 @@ const AnasIbnMalikSchool: React.FC = () => {
         Math: 'https://example.com/sec2/math',
         Social: 'https://example.com/sec2/social',
         ICT: 'https://example.com/sec2/ict',
+        German: 
+          '#',
+        French: 
+          '#',
+
       },
     }
   };
@@ -285,7 +329,6 @@ const AnasIbnMalikSchool: React.FC = () => {
     <div className="min-h-screen bg-amber-50">
       <Head>
         <title>Anas Ibn Malik School</title>
-        <meta name="google-site-verification" content="CoAMk0WQzTvNKdxbXJYakiYUtXOAiJBuZQhOXtqXtB8" />
         <meta name="description" content="Anas Ibn Malik School - Quality Education in Egypt" />
         <link rel="icon" href="/school-logo.png" />
         
@@ -667,6 +710,8 @@ const AnasIbnMalikSchool: React.FC = () => {
                   { name: 'Math evaluation', key: 'Math' },
                   { name: 'الدراسات الاجتماعية evaluation', key: 'Social' },
                   { name: 'ICT evaluation', key: 'ICT' },
+                  {name: 'German', key: 'German' },
+                  {name: 'French', key: 'French' },
                 ].map((item, index) => (
                   <li key={index} className="p-4 hover:bg-amber-50 transition-colors duration-200">
                     <a 
