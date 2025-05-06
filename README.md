@@ -43,7 +43,7 @@ Welcome to the **Anas Ibn Malik School Management System** repository! This proj
 ### 1️⃣ Project Setup:
 - Clone the repository:
   ```bash
-  git clone https://github.com/your-username/Anas-Ibn-Malik.git
+  git clone https://github.com/asaadzx/Anas-Ibn-Malik
   cd Anas-Ibn-Malik
 - Install dependencies:
   ```bash
