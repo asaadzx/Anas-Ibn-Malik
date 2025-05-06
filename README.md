@@ -129,11 +129,6 @@ Welcome to the **Anas Ibn Malik School Management System** repository! This proj
 
 ---
 
-## 🛡️ License
-This project is licensed under the MIT License. See the (LICENSE)[https://www.gnu.org/licenses/] file for details.
-
----
-
 ## ❤️ Acknowledgments
 Special thanks to asaadzx contributors and the open-source community for their support and inspiration.
 
