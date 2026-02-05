@@ -137,4 +137,4 @@ Special thanks to asaadzx contributors and the open-source community for their s
 ## 📬 Contact
 If you have any questions or suggestions, feel free to reach out:
 
-- 🌐 Website: https://asaadzx.deno.dev/
+- 🌐 Website: https://asaadzx.is-a.dev/
