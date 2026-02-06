@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"bun run /home/asaad/Documents/GitHub/Anas-Ibn-Malik/anas-ibn-malik-school/src/app/Backend/main.ts\"",
+    "dev_db": "concurrently \"next dev\" \"bun run /home/asaad/Documents/GitHub/Anas-Ibn-Malik/anas-ibn-malik-school/src/app/Backend/main.ts\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "concurrently \"next start\" \"bun run /home/asaad/Documents/GitHub/Anas-Ibn-Malik/anas-ibn-malik-school/src/app/Backend/main.ts\"",
     "lint": "next lint"
@@ -12,7 +13,7 @@
     "@types/webpack": "^5.28.5",
     "@vercel/analytics": "^1.5.0",
     "concurrently": "^9.1.2",
-    "next": "15.2.4",
+    "next": "15.2.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "webpack": "^5.98.0"
