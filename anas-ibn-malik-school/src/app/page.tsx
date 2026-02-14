@@ -99,19 +99,19 @@ const AnasIbnMalikSchool: React.FC = () => {
 
   const newsItems: NewsItem[] = [
     {
-      image: 'images/RAmadan-2A .jpg',
+      image: 'images/Ramadan.webp',
       title: 'School celebrates Ramadan and changes the look of classrooms',
       comment: 'The School now looks amazing - Asaad 2A',
     },
     {
-      image: 'images/art-competition.png',
-      title: 'ART Competition "Egypt IN HER CHILDREN EYES"',
-      comment: 'Winner gets full marks in ART! - ART TEACHER',
+      image: 'images/school-garden.webp',
+      title: 'New school garden is now open for students to enjoy nature and learn about plants all because of Mr.khaled and Mr.Naser',
+      comment: 'we love the new garden',
     },
     {
-      image: 'images/old-school.png',
-      title: 'New website becomes old and heloo new one, Students and Principal agreement!',
-      comment: 'Very well! - Student C',
+      image: '/images/the_amazing_prep_girls_class.webp',
+      title: 'The amazing Girls class 🌸 of the year 2026 2C prep',
+      comment: 'The best class in the school - Asaad zein',
     },
   ];
 
@@ -330,7 +330,7 @@ const AnasIbnMalikSchool: React.FC = () => {
       <Head>
         <title>Anas Ibn Malik School</title>
         <meta name="description" content="Anas Ibn Malik School - Quality Education in Egypt" />
-        <link rel="icon" href="/school-logo.png" />
+        <link rel="icon" href="/school-logo.webp" />
         
         {/* Analytics */}
         <Script
@@ -374,7 +374,7 @@ const AnasIbnMalikSchool: React.FC = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
             <Image 
-                src="/images/school-logo.png" 
+                src="/images/school-logo.webp" 
                 alt="School Logo" 
                 width={48}
                 height={48}
@@ -438,7 +438,7 @@ const AnasIbnMalikSchool: React.FC = () => {
             </h1>
             <div className="flex justify-center mb-8">
             <Image 
-                src="/images/school-logo.png" 
+                src="/images/school-logo.webp" 
                 alt="School Logo" 
                 width={48}
                 height={48}
@@ -467,11 +467,11 @@ const AnasIbnMalikSchool: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
               <Image 
-                src="/images/school-logo.png" 
+                src="/images/inschool_images/School interance.webp" 
                 alt="School Logo" 
-                width={48}
-                height={48}
-                className="h-12 w-12"
+                width={400}
+                height={400}
+                className="h-64 w-84"
               />
               </div>
               <div className="md:w-1/2">
@@ -556,10 +556,11 @@ const AnasIbnMalikSchool: React.FC = () => {
             <div className="bg-gradient-to-r from-amber-200 to-orange-200 rounded-xl p-6">
               <h3 className="text-2xl font-bold text-orange-800 mb-4">Student Gallery</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+                {/* it works by numbers to the students activity folders so we can add more without changing the code */}
+                {[1, 2, 3, 4, 5, 6].map((item) => (
                   <img 
                     key={item}
-                    src={`/images/student-${item}.jpg`} 
+                    src={`/images/student_activity/student-${item}.webp`} 
                     alt={`Student activity ${item}`}
                     className="rounded-lg h-32 w-full object-cover shadow-md"
                   />
@@ -803,7 +804,7 @@ const AnasIbnMalikSchool: React.FC = () => {
             <div className="mb-4 md:mb-0">
               <div className="flex items-center space-x-2">
               <Image 
-                src="/images/school-logo.png" 
+                src="/images/school-logo.webp" 
                 alt="School Logo" 
                 width={48}
                 height={48}

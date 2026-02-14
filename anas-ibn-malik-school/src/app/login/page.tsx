@@ -43,7 +43,7 @@ const LoginPage: React.FC = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <img 
-            src="/images/school-logo.png" 
+            src="/images/school-logo.webp" 
             alt="School Logo" 
             className="h-16 w-auto"
           />

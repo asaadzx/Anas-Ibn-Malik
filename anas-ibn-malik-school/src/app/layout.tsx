@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     google: "CoAMk0WQzTvNKdxbXJYakiYUtXOAiJBuZQhOXtqXtB8",
   },
   icons: {
-    icon: "images/school-logo.png",
+    icon: "images/school-logo.webp",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
