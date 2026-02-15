@@ -8,6 +8,7 @@ interface Teacher {
   id: string;
   name: string;
   subject: string;
+  imageUrl?: string;
   description: string;
   page:string;
 }
@@ -76,9 +77,10 @@ const AnasIbnMalikSchool: React.FC = () => {
     },
     {
       id: 'ahmed',
-      name: 'Mr. Ahmed S3eed',
+      name: 'Mr. Ahmed Saeed',
       subject: 'Mathematics Teacher',
-      description: 'With over 10 years of experience, Mr. Ahmed inspires students to love math.',
+      imageUrl: '/images/Teachers/Ahmed Math-Fun.jpg',
+      description: 'With over 31 years of experience, Mr. Ahmed inspires students to love math.',
       page: '/teachers/ahmed',
     },
     {
@@ -510,7 +512,17 @@ const AnasIbnMalikSchool: React.FC = () => {
                   onClick={() => window.location.href = `${teacher.page}`}
                 >
                   <div className="h-48 bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center">
-                    <span className="text-6xl text-white font-bold">{teacher.name.charAt(0)}</span>
+                    {teacher.imageUrl ? (
+                      <Image 
+                        src={teacher.imageUrl} 
+                        alt={teacher.name} 
+                        width={200}
+                        height={200}
+                        className="h-48 w-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-5xl text-white">{teacher.subject.split(' ')[0][0]}</div>
+                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-orange-700 mb-1">{teacher.name}</h3>
