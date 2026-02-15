@@ -80,7 +80,7 @@ const AnasIbnMalikSchool: React.FC = () => {
       name: 'Mr. Ahmed Saeed',
       subject: 'Mathematics Teacher',
       imageUrl: '/images/Teachers/Ahmed Math-Fun.jpg',
-      description: 'With over 31 years of experience, Mr. Ahmed inspires students to love math.',
+      description: 'With over 30 years of experience, Mr. Ahmed inspires students to love math.',
       page: '/teachers/ahmed',
     },
     {

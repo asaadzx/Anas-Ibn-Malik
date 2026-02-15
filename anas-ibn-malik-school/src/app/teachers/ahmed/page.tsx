@@ -5,7 +5,7 @@ import Image from 'next/image';
 const teacherData = {
   name: "Mr. Ahmed Saeed",
   position: "Mathematics Teacher, Senior Teacher",
-  experience: "31 years",
+  experience: "30 years",
   qualifications: "bachelor's degree in mathematics education, master's degree in applied mathematics",
   bio: "Dedicated to fostering a love for mathematics in students. Specializes in advanced calculus and problem-solving techniques. Helped students overcome their math challenges and improved how they learn mathematics.",
   email: "",
@@ -13,7 +13,7 @@ const teacherData = {
   imageUrl: "/images/Teachers/Ahmed Math-Fun.jpg",
   subjects: ["Algebra", "Calculus", "Geometry"],
   achievements: [
-    "Over 31 years of teaching experience",
+    "Over 30 years of teaching experience",
     "Inspired countless students to love mathematics",
     "Helped students overcome math problems and improved their learning approach",
   ]
